@@ -1,0 +1,20 @@
+Ques 1 : Find all the information about each products
+Ans: db.flipkart.products.find({}).pretty()
+Ques 2 : Find the product price which are between 400 to 800
+Ans: db.flipkart.products.find({ product_price: { $gt: 400, $lt: 800 } }).pretty()
+Ques 3 : Find the product price which are not between 400 to 600
+Ans: db.flipkart.products.find( { $or : [ { "product_price" : { $lte: 400 } }, { "product_price" : { $gte: 600 } } ] } ).pretty()
+Ques 4 : List the four product which are grater than 500 in price 
+Ans: db.flipkart.products.find({product_price: { $gt: 500 } }).limit(4).pretty()
+Ques 5 : Find the product name and product material of each products
+ANs: db.flipkart.products.find( {}, { product_name: 1 , product_material : 1}).pretty()
+Ques 6 : Find the product with a row id of 10
+Ans: db.flipkart.products.find({ "id" : "10" }).pretty()
+Ques 7 : Find only the product name and product material
+Ans: db.flipkart.products.find( {}, { product_name: 1 , product_material : 1}).pretty()
+Ques 8 : Find all products which contain the value of soft in product material 
+Ans: db.flipkart.products.find({"product_material" : { $regex : /Soft/}}).pretty()
+Ques 9 : Find products which contain product color indigo  and product price 492.00
+Ans:
+Ques 10 : Delete the products which product price value are same
+Ans:
